@@ -48,7 +48,7 @@ class Messages extends React.Component {
         redirect: 'follow'
       };
 
-      let response = await fetch('https://mysqlcs639.cs.wisc.edu/application/messages', requestOptions);
+      let response = await fetch(window.$ENDPOINT_URL + '/application/messages', requestOptions);
       if(!response.ok) {
         await this.delay(500);
         continue;

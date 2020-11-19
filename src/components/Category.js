@@ -62,7 +62,7 @@ class Category extends React.Component {
       redirect: 'follow'
     };
 
-    await fetch('https://mysqlcs639.cs.wisc.edu/application/tags', requestOptions);
+    await fetch(window.$ENDPOINT_URL + '/application/tags', requestOptions);
   }
 
   async fetchTagsFromServer() {
@@ -77,7 +77,7 @@ class Category extends React.Component {
         redirect: 'follow'
       };
 
-      let tagsResponse = await fetch('https://mysqlcs639.cs.wisc.edu/application/tags', requestOptions);
+      let tagsResponse = await fetch(window.$ENDPOINT_URL + '/application/tags', requestOptions);
       if(!tagsResponse.ok) {
         await this.delay(500);
         continue;
@@ -191,7 +191,7 @@ class Category extends React.Component {
         }
       }
 
-      let response = await fetch('https://mysqlcs639.cs.wisc.edu/products?category=' + this.props.name + '&tags=' + tagsString, requestOptions);
+      let response = await fetch(window.$ENDPOINT_URL + '/products?category=' + this.props.name + '&tags=' + tagsString, requestOptions);
       let result = await response.json();
 
       await this.setState({ products: result.products });
@@ -209,7 +209,7 @@ class Category extends React.Component {
       redirect: "follow"
     };
 
-    let response = await fetch('https://mysqlcs639.cs.wisc.edu/categories/' + this.props.name + '/tags', requestOptions);
+    let response = await fetch(window.$ENDPOINT_URL + '/categories/' + this.props.name + '/tags', requestOptions);
     let result = await response.json();
 
     this.setState({tags: result.tags})

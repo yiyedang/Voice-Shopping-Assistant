@@ -8,6 +8,18 @@ let username = "";
 let password = "";
 let token = "";
 
+USE_LOCAL_ENDPOINT = false;
+// set this flag to true if you want to use a local endpoint
+// set this flag to false if you want to use the online endpoint
+ENDPOINT_URL = ""
+if (USE_LOCAL_ENDPOINT){
+ENDPOINT_URL = "http://127.0.0.1:5000"
+} else{
+ENDPOINT_URL = "https://mysqlcs639.cs.wisc.edu"
+}
+
+
+
 async function getToken () {
   let request = {
     method: 'GET',
@@ -16,7 +28,7 @@ async function getToken () {
     redirect: 'follow'
   }
 
-  const serverReturn = await fetch('https://mysqlcs639.cs.wisc.edu/login',request)
+  const serverReturn = await fetch(ENDPOINT_URL + '/login',request)
   const serverResponse = await serverReturn.json()
   token = serverResponse.token
 
@@ -29,6 +41,7 @@ app.post('/', express.json(), (req, res) => {
 
   function welcome () {
     agent.add('Webhook works!')
+    console.log(ENDPOINT_URL)
   }
 
   async function login () {

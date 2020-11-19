@@ -115,7 +115,7 @@ class Product extends React.Component {
     };
 
     for(let i = 0; i < this.state.quantity; i++) {
-      await fetch('https://mysqlcs639.cs.wisc.edu/application/products/' + this.props.product.id, requestOptions)
+      await fetch(window.$ENDPOINT_URL + '/application/products/' + this.props.product.id, requestOptions)
     }
     this.setState({showToast: true})
   }

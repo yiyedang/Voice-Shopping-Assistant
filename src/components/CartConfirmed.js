@@ -27,7 +27,7 @@ class CartReview extends React.Component {
       redirect: 'follow'
     };
 
-    let response = await fetch('https://mysqlcs639.cs.wisc.edu/application/products', requestOptions);
+    let response = await fetch(window.$ENDPOINT_URL + '/application/products', requestOptions);
     let result = await response.json();
 
     this.setState({products: result.products});

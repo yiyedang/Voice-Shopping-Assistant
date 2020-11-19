@@ -70,7 +70,7 @@ class Cart extends React.Component {
         redirect: 'follow'
       };
 
-      let productsResponse = await fetch('https://mysqlcs639.cs.wisc.edu/application/products', requestOptions);
+      let productsResponse = await fetch(window.$ENDPOINT_URL + '/application/products', requestOptions);
       if(!productsResponse.ok) {
         await this.delay(500);
         continue;
@@ -153,7 +153,7 @@ class Cart extends React.Component {
       redirect: 'follow'
     };
 
-    await fetch('https://mysqlcs639.cs.wisc.edu/application/products/' + id, requestOptions);
+    await fetch(window.$ENDPOINT_URL + '/application/products/' + id, requestOptions);
 
     await this.fetchProducts();
   }
@@ -171,7 +171,7 @@ class Cart extends React.Component {
       redirect: 'follow'
     };
 
-    await fetch('https://mysqlcs639.cs.wisc.edu/application/products/' + id, requestOptions);
+    await fetch(window.$ENDPOINT_URL + '/application/products/' + id, requestOptions);
 
     await this.fetchProducts();
   }
@@ -187,7 +187,7 @@ class Cart extends React.Component {
       redirect: 'follow'
     };
 
-    await fetch('https://mysqlcs639.cs.wisc.edu/application/products', requestOptions);
+    await fetch(window.$ENDPOINT_URL + '/application/products', requestOptions);
 
     await this.fetchProducts();
   }
