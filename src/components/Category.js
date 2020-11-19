@@ -162,7 +162,7 @@ class Category extends React.Component {
       };
 
       let response = await fetch(
-        "https://mysqlcs639.cs.wisc.edu/products?category=" + this.props.name,
+        window.$ENDPOINT_URL + "/products?category=" + this.props.name,
         requestOptions
       );
       let result = await response.json();
@@ -265,7 +265,7 @@ class Category extends React.Component {
         redirect: "follow"
       };
 
-      await fetch("https://mysqlcs639.cs.wisc.edu/application/tags/" + tag, requestOptions);
+      await fetch(window.$ENDPOINT_URL + "/application/tags/" + tag, requestOptions);
     }
     else {
       let myHeaders = new Headers();
@@ -278,7 +278,7 @@ class Category extends React.Component {
         redirect: "follow"
       };
 
-      await fetch("https://mysqlcs639.cs.wisc.edu/application/tags/" + tag, requestOptions);
+      await fetch(window.$ENDPOINT_URL + "/application/tags/" + tag, requestOptions);
     }
 
     await this.fetchProducts();

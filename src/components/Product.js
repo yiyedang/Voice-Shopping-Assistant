@@ -24,7 +24,7 @@ class Product extends React.Component {
   }
 
   async fetchReviews() {
-    const baseUrl = "https://mysqlcs639.cs.wisc.edu";
+    const baseUrl = window.$ENDPOINT_URL;
 
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");

@@ -1,3 +1,32 @@
+# Basic Setup
+
+In index.js and webhook.js , there is the ENDPOINT_URL flag, which details whether the which respectively tell the web interface and dialogflow webhook whether requests should target the online endpoint or a local instance of the endpoint. 
+
+We have elected to provide the option to fetch from a local instance of the endpoint, because a dialogflow intent has an inflexible timeout deadline of 5 seconds, and some students may not have a 5 second latency to our online endpoint, 
+
+To target the online endpoint, change the window.$USE_LOCAL_ENDPOINT flag to false in index.js and the USE_LOCAL_ENDPOINT flag to false in webhook.js
+
+To target the local endpoint, change the window.$USE_LOCAL_ENDPOINT flag to true in index.js and the USE_LOCAL_ENDPOINT flag to true in webhook.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # WiscShop API
 
 The following API can be accessed at `https://mysqlcs639.cs.wisc.edu`
