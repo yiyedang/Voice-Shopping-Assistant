@@ -37,7 +37,7 @@ class Product extends React.Component {
     };
 
     let response = await fetch(
-      baseUrl + "/" + this.props.path + "/reviews",
+      baseUrl +  this.props.path + "/reviews",
       requestOptions
     );
     let result = await response.json();
