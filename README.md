@@ -1,16 +1,29 @@
-# Basic Setup
+# WiscShop-Voice-Assistant
 
-We have elected to provide the option to fetch from a local instance of the endpoint, because a Dialogflow intent has an inflexible timeout deadline of 5 seconds, and some students may not have a 5 second latency to our online endpoint. 
+This assignment is meant to teach you the basics of building a dialog-based interface. You will do this by working with Dialogflow, a software suite by Google, as well as a react app that is provided to you. You are expected to create a completely functional voice agent that also modifies the application state on the server, such that the web page is updated.
 
-In index.js and webhook.js ,there are the USE_LOCAL_ENDPOINT flags, which tell the web interface and dialogflow webhook whether requests should target the online endpoint or a local instance of the endpoint. 
-
-To target the online endpoint, change the window.$USE_LOCAL_ENDPOINT flag to false in index.js and the USE_LOCAL_ENDPOINT flag to false in webhook.js
-
-To target the local endpoint, change the window.$USE_LOCAL_ENDPOINT flag to true in index.js and the USE_LOCAL_ENDPOINT flag to true in webhook.js
-
-
-
-
+### Login
+- User is able to login with username and password. You do not need to handle account creation.
+- NOTE: It is sufficient if the user enters this information as a text query (typing), in case the username and/or password is hard to parse. It should still be english, e.g. "Log in with username <username> and password <password>."
+### Queries
+- Categories: User should be able to query about the types of products offered.
+- Tags: User should be able to inquire about the types of tags for a specific category.
+- Cart: User should be able to request information about what is in their cart (e.g. total number and type of items, total cost, etc.).
+- Product Info: User should be able to request information about a product. If the product has reviews, they should be able to inquire about reviews and average ratings.
+### Actions
+- Tags: User should be able to narrow down the search results within a category by specifying tags, e.g. "Show me all the red ones". 
+- Cart: User should be able to add/remove items (or multiple of an item) to/from your cart. They should also be able to clear their cart.
+- Cart Confirm: User should be able to review, then confirm their cart.
+### Navigation
+- User should be able to navigate through the application with the voice assistant using natural language, e.g., "Take me to the home page" or "Show me the hats".
+- For a full breakdown of the various routes in the application, see the WiscShop readme.
+### Messages
+- Messages should be updated when the user or agent says something.
+- Upon starting a new session, the messages should be cleared.
+### Design and Personality
+- Users should be able to converse with the agent in natural language to perform tasks. 
+- You shouldn't need to specify product id's to navigate. 
+- The agent should have a personality, and should engage in expected turn-taking behavior.
 
 
 # WiscShop API
